@@ -39,11 +39,25 @@ class WorldScene extends Phaser.Scene {
         this.physics.world.bounds.width = map.widthInPixels;
         this.physics.world.bounds.height = map.heightInPixels;
         this.player.setCollideWorldBounds(true);
-        this.cursors = this.input.keyboard.createCursorKeys();        
+        this.cursors = this.input.keyboard.createCursorKeys();
 
         this.cameras.main.setBounds(0, 0, map.widthInPixels, map.heightInPixels);
         this.cameras.main.startFollow(this.player);
         this.cameras.main.roundPixels = true;
+
+        this.counter = 60;
+
+        this.text = this.add.text(0, 0, 'Counter: 0', {
+            font: "16px Arial",
+            fill: "#ffffff",
+            align: "center"
+        });
+        this.text.fixedToCamera = true;
+        console.log(this.time.loop);
+        this.time.addEvent({ delay: 1000, callback: this.updateCounter, callbackScope: this, loop: true });
+        // this.time.loop(Phaser.Time, this.updateCounter, this);
+        // text.cameraOffset.set(200, 500);
+        // text.anchor.setTo(0.5, 0.5);
 
         this.anims.create({
             key: 'left',
@@ -84,14 +98,14 @@ class WorldScene extends Phaser.Scene {
         this.physics.add.collider(this.player, obstacles);
 
         this.spawns = this.physics.add.group();
-        
+
         for (var i = 0; i < 30; i++) {
             var x = Phaser.Math.RND.between(0, this.physics.world.bounds.width);
             var y = Phaser.Math.RND.between(0, this.physics.world.bounds.height);
             this.spawns.create(x, y, 'star', 0);
             this.spawns.children.entries[i].scale = 0.02;
         }
-        
+
         this.physics.add.overlap(this.player, this.spawns, this.onMeetEnemy, false, this);
         console.log(this.spawns);
     }
@@ -105,7 +119,7 @@ class WorldScene extends Phaser.Scene {
             this.player.flipX = true;
         } else if (this.cursors.right.isDown) {
             this.player.body.setVelocityX(80);
-            this.player.flipX = false;            
+            this.player.flipX = false;
         }
 
         // Vertical movement
@@ -125,7 +139,11 @@ class WorldScene extends Phaser.Scene {
             this.player.anims.play('down', true);
         } else {
             this.player.anims.stop();
-        }
+        }     
+        
+        this.text.x = this.cameras.main.scrollX;
+        this.text.y = this.cameras.main.scrollY;
+
     }
 
     onMeetEnemy(player, zone) {
@@ -135,7 +153,15 @@ class WorldScene extends Phaser.Scene {
 
         // start battle 
         this.cameras.main.flash(300);
-        
+
+    }
+
+    updateCounter() {
+
+        this.counter -= 1;
+    
+        this.text.setText('Counter: ' + this.counter);
+    
     }
 };
 
