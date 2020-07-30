@@ -53,11 +53,17 @@ class WorldScene extends Phaser.Scene {
             align: "center"
         });
         this.text.fixedToCamera = true;
-        console.log(this.time.loop);
         this.time.addEvent({ delay: 1000, callback: this.updateCounter, callbackScope: this, loop: true });
-        // this.time.loop(Phaser.Time, this.updateCounter, this);
-        // text.cameraOffset.set(200, 500);
-        // text.anchor.setTo(0.5, 0.5);
+        
+        this.score = 0;
+        
+        this.textScore = this.add.text((this.cameras.main.scrollX + this.cameras.main.width) -75, -1, 'Score: 0', {
+            font: "16px Arial",
+            fill: "#ffffff",
+            align: "center"
+        });
+
+        console.log(this.textScore);
 
         this.anims.create({
             key: 'left',
@@ -144,6 +150,8 @@ class WorldScene extends Phaser.Scene {
         this.text.x = this.cameras.main.scrollX;
         this.text.y = this.cameras.main.scrollY;
 
+        this.textScore.x = (this.cameras.main.scrollX + this.cameras.main.width) - this.textScore.width;
+        this.textScore.y = this.cameras.main.scrollY;
     }
 
     onMeetEnemy(player, zone) {
@@ -153,6 +161,10 @@ class WorldScene extends Phaser.Scene {
 
         // start battle 
         this.cameras.main.flash(300);
+
+        this.score += 1;
+    
+        this.textScore.setText('Score:' + this.score);
 
     }
 
