@@ -3,6 +3,7 @@ import tiles from '../assets/map/spritesheet.png'
 import player from '../assets/map/orc-0.png'
 import map from '../assets/map/map.json'
 import star from '../assets/ystar.png'
+import GameOverScene from './gameOverScene'
 
 class WorldScene extends Phaser.Scene {
 
@@ -113,7 +114,10 @@ class WorldScene extends Phaser.Scene {
         }
 
         this.physics.add.overlap(this.player, this.spawns, this.onMeetEnemy, false, this);
-        console.log(this.spawns);
+
+        if (this.counter < 1) {
+            this.scene.start("GameOverScene");
+        }
     }
 
     update(time, delta) {
@@ -173,6 +177,10 @@ class WorldScene extends Phaser.Scene {
         this.counter -= 1;
     
         this.text.setText('Counter: ' + this.counter);
+
+        if (this.counter < 1) {
+            this.scene.start("GameOverScene");
+        }
     
     }
 };

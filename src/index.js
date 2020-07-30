@@ -1,5 +1,6 @@
 import 'phaser';
 import WorldScene from './scenes/worldScene.js'
+import GameOverScene from './scenes/gameOverScene.js'
 
 let game;
 
@@ -20,7 +21,8 @@ window.onload = () => {
       }
     },
     scene: [
-      WorldScene
+      WorldScene,
+      GameOverScene
     ]
   };
 
