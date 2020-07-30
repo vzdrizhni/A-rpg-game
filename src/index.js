@@ -1,5 +1,4 @@
 import 'phaser';
-import BootScene from './scenes/bootScene.js'
 import WorldScene from './scenes/worldScene.js'
 
 let game;
