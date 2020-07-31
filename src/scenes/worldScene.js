@@ -4,13 +4,11 @@ import player from '../assets/map/orc-0.png'
 import map from '../assets/map/map.json'
 import star from '../assets/ystar.png'
 import GameOverScene from './gameOverScene'
-import game from '../index.js'
 
 class WorldScene extends Phaser.Scene {
 
     constructor() {
         super("WorldScene");
-        // this.score = 0;
     }
 
     preload() {
@@ -30,8 +28,6 @@ class WorldScene extends Phaser.Scene {
         var map = this.make.tilemap({
             key: 'map'
         });
-        let game = game;
-        console.log(this);
 
         var tiles = map.addTilesetImage('spritesheet', 'tiles');
 
@@ -59,8 +55,6 @@ class WorldScene extends Phaser.Scene {
         });
         this.text.fixedToCamera = true;
         this.time.addEvent({ delay: 1000, callback: this.updateCounter, callbackScope: this, loop: true });
-        
-        // this.score = 0;
         
         this.textScore = this.add.text((this.cameras.main.scrollX + this.cameras.main.width) -75, -1, 'Score: 0', {
             font: "16px Arial",

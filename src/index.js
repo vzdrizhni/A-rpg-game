@@ -1,6 +1,8 @@
 import 'phaser';
 import WorldScene from './scenes/worldScene.js'
 import GameOverScene from './scenes/gameOverScene.js'
+import RexUIPlugin from 'phaser3-rex-plugins/templates/ui/ui-plugin'
+import EnterNameScene from './scenes/enterNameScene.js'
 
 export let game
 
@@ -21,14 +23,25 @@ window.onload = () => {
       }
     },
     scene: [
+      EnterNameScene,
       WorldScene,
-      GameOverScene
+      GameOverScene      
     ],
+    dom: {
+      createContainer: true
+    },
+    plugins: {
+      scene: [{
+        key: 'rexUI',
+        plugin: RexUIPlugin,
+        mapping: 'rexUI'
+      }]
+    }
   };
 
   Phaser.Game.prototype.score = 0;
+  Phaser.Game.prototype.playerName = "";
   game = new Phaser.Game(config);
-  console.log(game);
 }
 
 // export default game

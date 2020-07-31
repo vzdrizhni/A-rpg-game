@@ -11,6 +11,12 @@ class GameOverScene extends Phaser.Scene {
             fill: "#ffffff",
             align: "center"
         });
+
+        this.textName = this.add.text(0, 30, `Name: ${this.game.playerName}`, {
+            font: "16px Arial",
+            fill: "#ffffff",
+            align: "center"
+        });
        
     }
     
