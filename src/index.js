@@ -2,7 +2,7 @@ import 'phaser';
 import WorldScene from './scenes/worldScene.js'
 import GameOverScene from './scenes/gameOverScene.js'
 
-let game;
+export let game
 
 window.onload = () => {
   var config = {
@@ -23,8 +23,12 @@ window.onload = () => {
     scene: [
       WorldScene,
       GameOverScene
-    ]
+    ],
   };
 
+  Phaser.Game.prototype.score = 0;
   game = new Phaser.Game(config);
+  console.log(game);
 }
+
+// export default game
