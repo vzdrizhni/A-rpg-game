@@ -46,7 +46,7 @@ class WorldScene extends Phaser.Scene {
         this.cameras.main.startFollow(this.player);
         this.cameras.main.roundPixels = true;
 
-        this.counter = 60;
+        this.counter = 10;
 
         this.text = this.add.text(0, 0, 'Counter: 0', {
             font: "16px Arial",
@@ -54,9 +54,14 @@ class WorldScene extends Phaser.Scene {
             align: "center"
         });
         this.text.fixedToCamera = true;
-        this.time.addEvent({ delay: 1000, callback: this.updateCounter, callbackScope: this, loop: true });
-        
-        this.textScore = this.add.text((this.cameras.main.scrollX + this.cameras.main.width) -75, -1, 'Score: 0', {
+        this.time.addEvent({
+            delay: 1000,
+            callback: this.updateCounter,
+            callbackScope: this,
+            loop: true
+        });
+
+        this.textScore = this.add.text((this.cameras.main.scrollX + this.cameras.main.width) - 75, -1, 'Score: 0', {
             font: "16px Arial",
             fill: "#ffffff",
             align: "center"
@@ -72,7 +77,6 @@ class WorldScene extends Phaser.Scene {
             flipX: -1
         });
 
-        // animation with key 'right'
         this.anims.create({
             key: 'right',
             frames: this.anims.generateFrameNumbers('player', {
@@ -110,16 +114,11 @@ class WorldScene extends Phaser.Scene {
         }
 
         this.physics.add.overlap(this.player, this.spawns, this.onMeetEnemy, false, this);
-
-        if (this.counter < 1) {
-            this.scene.start("GameOverScene");
-        }
     }
 
     update(time, delta) {
         this.player.body.setVelocity(0);
 
-        // Horizontal movement
         if (this.cursors.left.isDown) {
             this.player.body.setVelocityX(-80);
             this.player.flipX = true;
@@ -128,7 +127,6 @@ class WorldScene extends Phaser.Scene {
             this.player.flipX = false;
         }
 
-        // Vertical movement
         if (this.cursors.up.isDown) {
             this.player.body.setVelocityY(-80);
         } else if (this.cursors.down.isDown) {
@@ -145,8 +143,8 @@ class WorldScene extends Phaser.Scene {
             this.player.anims.play('down', true);
         } else {
             this.player.anims.stop();
-        }     
-        
+        }
+
         this.text.x = this.cameras.main.scrollX;
         this.text.y = this.cameras.main.scrollY;
 
@@ -155,30 +153,52 @@ class WorldScene extends Phaser.Scene {
     }
 
     onMeetEnemy(player, zone) {
-        // we move the zone to some other location
         zone.x = Phaser.Math.RND.between(0, this.physics.world.bounds.width);
         zone.y = Phaser.Math.RND.between(0, this.physics.world.bounds.height);
 
-        // start battle 
         this.cameras.main.flash(300);
 
         this.game.score += 1;
-    
-        this.textScore.setText('Score:' + this.game.score);
 
+        this.textScore.setText('Score:' + this.game.score);
+        this.person = {
+            score: this.game.score,
+            user: this.game.playerName
+        };
+
+        this.jsonedPerson = JSON.stringify(this.person);
     }
 
-    updateCounter() {
+    async updateCounter() {
 
         this.counter -= 1;
-    
+
         this.text.setText('Counter: ' + this.counter);
 
         if (this.counter < 1) {
+            console.log(this.jsonedPerson);
+            await this.gameData(this.jsonedPerson);
             this.scene.start("GameOverScene");
         }
-    
+
     }
+
+    async gameData(val) {
+        const url = "https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/UWGWN7rrI8dxg3RoMxko/scores/";
+
+        fetch(url, {
+            method: "POST",
+            mode: 'cors',
+            headers: {
+                Accept: 'Application/json',
+                'Content-Type': 'application/json',
+            },
+            body: val
+        }).then(response => {
+            console.log(val);
+            return response
+        });
+    }    
 };
 
 export default WorldScene
