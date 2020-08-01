@@ -45,5 +45,3 @@ window.onload = () => {
   Phaser.Game.prototype.playerName = "";
   game = new Phaser.Game(config);
 }
-
-// export default game

@@ -3,8 +3,7 @@ import tiles from '../assets/map/spritesheet.png'
 import player from '../assets/map/orc-0.png'
 import map from '../assets/map/map.json'
 import star from '../assets/ystar.png'
-import GameOverScene from './gameOverScene'
-
+import hit from '../assets/audio/hit.wav'
 class WorldScene extends Phaser.Scene {
 
     constructor() {
@@ -23,8 +22,11 @@ class WorldScene extends Phaser.Scene {
             frameWidth: 15,
             frameHeight: 15
         });
+        this.load.audio('hit', hit);
     }
     create() {
+        this.hitSound = this.sound.add('hit');
+
         var map = this.make.tilemap({
             key: 'map'
         });
@@ -169,6 +171,7 @@ class WorldScene extends Phaser.Scene {
         };
 
         this.jsonedPerson = JSON.stringify(this.person);
+        this.hitSound.play();
     }
 
     async updateCounter() {
@@ -178,7 +181,6 @@ class WorldScene extends Phaser.Scene {
         this.text.setText('Counter: ' + this.counter);
 
         if (this.counter < 1) {
-            console.log(this.jsonedPerson);
             await this.gameData(this.jsonedPerson);
             this.scene.start("GameOverScene");
         }
@@ -197,7 +199,6 @@ class WorldScene extends Phaser.Scene {
             },
             body: val
         }).then(response => {
-            console.log(val);
             return response
         });
     }    

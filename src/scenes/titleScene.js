@@ -1,5 +1,6 @@
 import titleScreen from '../assets/GameTitle.png'
 import TweenHelper from '../helperClasses/tweenHelper.js'
+import backgroundMusic from '../assets/audio/CyberAssassinforSoundCloud.mp3'
 
 class TitleScene extends Phaser.Scene {
     preload() {
@@ -7,9 +8,15 @@ class TitleScene extends Phaser.Scene {
             frameWidth: 320,
             frameHeight: 240
         });
+
+        this.load.audio('backgroundMusic', backgroundMusic)
     }
 
     create() {
+        this.music = this.game.sound.add('backgroundMusic');
+        this.music.loop = true;
+        this.music.volume = 0.7;
+        this.music.play();
         this.background = this.add.sprite(0, 0, 'background');
 
         this.background.displayWidth = this.game.config.width;

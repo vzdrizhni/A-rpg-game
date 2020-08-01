@@ -49,7 +49,6 @@ class GameOverScene extends Phaser.Scene {
 
     update(time, delta) {
         this.cursor = this.input.keyboard.createCursorKeys();
-        // console.log(this.cursor.up);
         if (this.cursor.space.isDown) {
             this.game.score = 0;
             this.scene.start("WorldScene");
