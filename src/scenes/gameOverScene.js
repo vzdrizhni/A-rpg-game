@@ -1,3 +1,4 @@
+import Phaser from 'phaser'
 import TweenHelper from '../helperClasses/tweenHelper';
 
 class GameOverScene extends Phaser.Scene { // eslint-disable-line no-undef
@@ -64,7 +65,7 @@ class GameOverScene extends Phaser.Scene { // eslint-disable-line no-undef
         Accept: 'Application/json',
         'Content-Type': 'application/json',
       },
-    }).then(response => response.json()).then(content => content);
+    }).then(response => response.json()).then(content => content).catch(() => console.log('some error'));
   }
 }
 
