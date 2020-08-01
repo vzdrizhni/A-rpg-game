@@ -23,9 +23,10 @@ window.onload = () => {
       }
     },
     scene: [
+      GameOverScene,
       EnterNameScene,
       WorldScene,
-      GameOverScene      
+            
     ],
     dom: {
       createContainer: true
