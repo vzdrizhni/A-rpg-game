@@ -5,6 +5,9 @@ class GameOverScene extends Phaser.Scene {
 
     async create() {
 
+        this.result = await this.gameData();
+        this.result = this.result.result;
+
         this.text = this.add.text(0, 0, `Score: ${this.game.score}`, {
             font: "16px Arial",
             fill: "#ffffff",
@@ -17,17 +20,18 @@ class GameOverScene extends Phaser.Scene {
             align: "center"
         });
 
-        this.result = await this.gameData();
-        console.log(this.result);
-        this.result = this.result.result;
+        this.textRestart = this.add.text(this.cameras.main.width / 4 + 10, this.cameras.main.width / 2 + 20, `Press space to restart`, {
+            font: "16px Arial",
+            fill: "#ffffff",
+            align: "center"
+        });        
 
         this.add.text(this.cameras.main.width / 4 + 20, this.cameras.main.width / 4 - 20, 'Leader Board:', {
             color: 'white',
             fontSize: '16px ',
-        })
+        });
 
         this.result.sort((x, y) => y.score - x.score);
-        console.log(this.result);
         for (let i = 0; i < 5; i += 1) {
             if (this.result[i] !== undefined) {
                 this.add.text(this.cameras.main.width / 4, this.cameras.main.width / 4 + (12 * i),
@@ -36,8 +40,16 @@ class GameOverScene extends Phaser.Scene {
                         fontSize: '16px '
                     });
             }
-        }
+        };
+    };
 
+    update(time, delta) {
+        this.cursor = this.input.keyboard.createCursorKeys();
+        // console.log(this.cursor.up);
+        if (this.cursor.space.isDown) {
+            this.game.score = 0;
+            this.scene.start("WorldScene");
+        }
     }
 
     async gameData() {
