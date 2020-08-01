@@ -3,8 +3,9 @@ import WorldScene from './scenes/worldScene.js'
 import GameOverScene from './scenes/gameOverScene.js'
 import RexUIPlugin from 'phaser3-rex-plugins/templates/ui/ui-plugin'
 import EnterNameScene from './scenes/enterNameScene.js'
+import TitleScene from './scenes/titleScene.js'
 
-export let game
+let game
 
 window.onload = () => {
   var config = {
@@ -23,6 +24,7 @@ window.onload = () => {
       }
     },
     scene: [
+      TitleScene,
       EnterNameScene,
       WorldScene,
       GameOverScene      

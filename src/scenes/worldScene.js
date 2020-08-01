@@ -85,6 +85,7 @@ class WorldScene extends Phaser.Scene {
             frameRate: 10,
             repeat: -1
         });
+        
         this.anims.create({
             key: 'up',
             frames: this.anims.generateFrameNumbers('player', {
@@ -93,6 +94,7 @@ class WorldScene extends Phaser.Scene {
             frameRate: 10,
             repeat: -1
         });
+
         this.anims.create({
             key: 'down',
             frames: this.anims.generateFrameNumbers('player', {

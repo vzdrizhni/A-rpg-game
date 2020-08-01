@@ -1,3 +1,5 @@
+import TweenHelper from '../helperClasses/tweenHelper.js'
+
 class GameOverScene extends Phaser.Scene {
     constructor() {
         super('GameOverScene');
@@ -41,6 +43,8 @@ class GameOverScene extends Phaser.Scene {
                     });
             }
         };
+
+        TweenHelper.flashElement(this, this.textRestart);
     };
 
     update(time, delta) {
