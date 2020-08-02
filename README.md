@@ -68,36 +68,11 @@ After a minute passed round ends and scoreboard displayed on a page.
 
 A character can be controled wit arrow keys(UP, DOWN, LEFT, RIGHT). Try to collect as many stars as possible!
 
+### Design Process
+
+Initially a game was designed as a turned-based RPG about fantasy creatures battles. But because of the severe reality the game is what it is now.
 <!-- INSTALLATION -->
-## Installation
-
-To have this app on your pc, you need to:
-* have Ruby & Ruby on Rails installed in your computer
-* [download](https://github.com/vzdrizhni/RPG-game/archive/development.zip) or clone this repo:
-  - Clone with SSH:
-  ```
-    git@github.com:vzdrizhni/RPG-game.git
-  ```
-  - Clone with HTTPS
-  ```
-    https://github.com/vzdrizhni/RPG-game.git
-  ```
-* and open the terminal inside the repo and run the bundler
-  - ```$ bundler install --without production```
-* then, run rails db:migrate && rails db:seed. This creates the database with the corresponding tables, columns and associations and will populate the database with mockup content
-  - ```$ rails db:migrate```
-* and finally, you can test it in the console by running
-  - ```$ rails server``` and using ```localhost:3000``` into your browser address bar to start using it
-
-  ## Rspec testing
-
-* Run the command and see the output:
-```$ bundle exec rspec```
-![Rspec](app/assets/images/rspec.PNG)
-
-## Database Structure
- * Database schema used for this project reflects the following structure:
- ![erd](app/assets/images/erd.png)
+#
 
 ### Built With
 This project was built using these technologies.
@@ -112,7 +87,7 @@ This project was built using these technologies.
 
 <!-- Live Demo -->
 ## Live Demo and Walkthrough Video
-* Live Demo Link: - Heroku Deployment - [RPG-game](https://fathomless-atoll-13027.herokuapp.com/articles) :point_left:
+* Live Demo Link: - Heroku Deployment - [RPG-game](https://vzdrizhni.github.io/A-rpg-game/) :point_left:
 ## WalkThrough Video:
 https://www.loom.com/share/a4b5d729b10a4f88ac7e8365e81e2444
 ## Potential future features
