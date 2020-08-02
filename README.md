@@ -76,24 +76,22 @@ Initially a game was designed as a turned-based RPG about fantasy creatures batt
 
 ### Built With
 This project was built using these technologies.
-* Ruby & Ruby on Rails
-* Rspec / Capybara
-* Bootstrap
-* HTML / CSS / SCSS
-* SQLite
-* Rubocop
+* JavaScript
+* Phaser3
+* Webpack
+* Jest Tests
 * GithubActions :muscle:
-* Atom
+* VSCode
 
 <!-- Live Demo -->
 ## Live Demo and Walkthrough Video
-* Live Demo Link: - Heroku Deployment - [RPG-game](https://vzdrizhni.github.io/A-rpg-game/) :point_left:
+* Live Demo Link: - [RPG-game](https://vzdrizhni.github.io/A-rpg-game/) :point_left:
 ## WalkThrough Video:
 https://www.loom.com/share/a4b5d729b10a4f88ac7e8365e81e2444
 ## Potential future features
-- Add fully working weather API
-- Extend the Authorisation feature
-- Improve the front-end
+- Extend gameplay functionality.
+- Add Enemies.
+- Add more interesting maps
 
 <!-- CONTACT -->
 ## Contributors
@@ -107,15 +105,9 @@ https://www.loom.com/share/a4b5d729b10a4f88ac7e8365e81e2444
 
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
-* [Microverse](https://www.microverse.org/)
-* [Ruby Documentation](https://www.ruby-lang.org/en/documentation/)
-* [Ruby on Rails](https://rubyonrails.org/)
-* [Bootstrap](https://getbootstrap.com/)
-* [Behance](https://www.behance.net/)
-* [Heroku](https://www.heroku.com/)
-
-## Credits
-* Nelson Sakwa - [liFEstIye](https://www.behance.net/gallery/14554909/liFEsTlye-Mobile-version)
+* [Phaser3](https://phaser.io/phaser3) & [Phaser Template](https://github.com/rammazzoti2000/phaser_toolbox)
+* [Sound Theme]Music: Cyber Assassin by Firage, Source: https://soundcloud.com/firage/cyber-assassin, License: http://creativecommons.org/licenses/by/3.0/
+* [Main hero sprite] - https://craftpix.net/freebies/2d-fantasy-orcs-free-sprite-sheets/
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
