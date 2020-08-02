@@ -1,4 +1,4 @@
-import 'phaser';
+import Phaser from 'phaser';
 import tiles from '../assets/map/spritesheet.png';
 import player from '../assets/map/orc-0.png';
 import map from '../assets/map/map.json';
@@ -189,7 +189,7 @@ class WorldScene extends Phaser.Scene { // eslint-disable-line no-undef
   async gameData(val) { // eslint-disable-line class-methods-use-this
     const url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/UWGWN7rrI8dxg3RoMxko/scores/';
 
-    fetch(url, {
+    return await fetch(url, {
       method: 'POST',
       mode: 'cors',
       headers: {

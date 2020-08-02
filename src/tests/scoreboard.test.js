@@ -1,12 +1,17 @@
 require('jest-canvas-mock');
 import "babel-polyfill";
-const GameOverScene = require('../scenes/gameOverScene');
+import GameOverScene from '../scenes/gameOverScene'
 
-const game = GameOverScene.default; 
-const whatever = new game();
+const game = new GameOverScene(); 
+
+test('Should return object', () => {
+  game.gameData().then(result => {
+    expect(result).toBe(Object);
+  }).catch(() => {});
+});
 
 test('Should return object with array of players', () => {
-  whatever.gameData().then(content => {
+  game.gameData().then(content => {
     expect(content.result).toBe(Array);
-  }).catch(() => console.log('some error'));
+  }).catch(() => {});
 });

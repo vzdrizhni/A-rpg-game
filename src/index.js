@@ -38,7 +38,7 @@ window.onload = () => {
       }],
     },
   };
-
+  
   Phaser.Game.prototype.score = 0; // eslint-disable-line no-undef
   Phaser.Game.prototype.playerName = ''; // eslint-disable-line no-undef
   new Phaser.Game(config); // eslint-disable-line no-undef, no-new, no-undef
