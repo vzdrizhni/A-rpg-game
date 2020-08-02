@@ -46,7 +46,6 @@
 * [About the Project](#about-the-project)
   * [Built With](#built-with)
 * [Installation](#installation)
-* [Database Structure](#database-structure)
 * [Live Demo and Presentation](#live-demo-and-presentation)
 * [Contributors](#contributors)
 * [Acknowledgements](#acknowledgements)
@@ -62,6 +61,12 @@ After a minute passed round ends and scoreboard displayed on a page.
 ![screenshot-1](src/assets/titleScreen.PNG)
 
 ![screenshot-1](src/assets/screenshot.PNG)
+
+### How to Play
+
+![screenshot](src/assets/keys.png)
+
+A character can be controled wit arrow keys(UP, DOWN, LEFT, RIGHT). Try to collect as many stars as possible!
 
 <!-- INSTALLATION -->
 ## Installation
