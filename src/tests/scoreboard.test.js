@@ -1,8 +1,9 @@
-require('jest-canvas-mock');
-import "babel-polyfill";
-import GameOverScene from '../scenes/gameOverScene'
+import 'babel-polyfill';
+import GameOverScene from '../scenes/gameOverScene';
 
-const game = new GameOverScene(); 
+require('jest-canvas-mock');
+
+const game = new GameOverScene();
 
 test('Should return object', () => {
   game.gameData().then(result => {

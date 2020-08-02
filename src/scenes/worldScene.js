@@ -189,7 +189,7 @@ class WorldScene extends Phaser.Scene { // eslint-disable-line no-undef
   async gameData(val) { // eslint-disable-line class-methods-use-this
     const url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/UWGWN7rrI8dxg3RoMxko/scores/';
 
-    return await fetch(url, {
+    return fetch(url, {
       method: 'POST',
       mode: 'cors',
       headers: {
