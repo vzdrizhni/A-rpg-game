@@ -1,55 +1,153 @@
-# Phaser 3 Webpack Project Template
+<!--
+*** Thanks for checking out this README Template. If you have a suggestion that would
+*** make this better, please fork the repo and create a pull request or simply open
+*** an issue with the tag "enhancement".
+*** Thanks again! Now go create something AMAZING! :D
+-->
 
-A Phaser 3 project template with ES6 support via [Babel 7](https://babeljs.io/) and [Webpack 4](https://webpack.js.org/)
-that includes hot-reloading for development and production-ready builds.
-
-Loading images via JavaScript module `import` is also supported.
-
-## Requirements
-
-[Node.js](https://nodejs.org) is required to install dependencies and run scripts via `npm`.
-
-## Available Commands
-
-| Command | Description |
-|---------|-------------|
-| `npm install` | Install project dependencies |
-| `npm start` | Build project and open web server running project |
-| `npm run build` | Builds code bundle with production settings (minification, uglification, etc..) |
-
-## Writing Code
-
-After cloning the repo, run `npm install` from your project directory. Then, you can start the local development
-server by running `npm start`.
+<!-- PROJECT SHIELDS -->
+<!--
+*** I'm using markdown "reference style" links for readability.
+*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
+*** See the bottom of this document for the declaration of the reference variables
+*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
+*** https://www.markdownguide.org/basic-syntax/#reference-style-links
+-->
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
 
 
-After starting the development server with `npm start`, you can edit any files in the `src` folder
-and webpack will automatically recompile and reload your server (available at `http://localhost:8080`
-by default).
+<!-- PROJECT LOGO -->
+<br />
+<p align="center">
+  <a href="https://github.com/vzdrizhni/RPG-game">
+    <img src="src/assets/images/microverse.png" alt="Logo" width="80" height="80">
+  </a>
 
-## Customizing Template
+  <h3 align="center">Javascript / Capstone --> [RPG-game]</h3>
 
-### Babel
-You can write modern ES6+ JavaScript and Babel will transpile it to a version of JavaScript that you
-want your project to support. The targeted browsers are set in the `.babelrc` file and the default currently
-targets all browsers with total usage over "0.25%" but excludes IE11 and Opera Mini.
+  <p align="center">
+    This project is the Capstone of the Microverse curriculum at the end of the Ruby on Rails module!
+    <br />
+    <a href="https://github.com/vzdrizhni/RPG-game"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="https://github.com/vzdrizhni/RPG-game/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/vzdrizhni/RPG-game/issues">Request Feature</a>
+  </p>
+</p>
 
+<!-- TABLE OF CONTENTS -->
+## Table of Contents
+
+* [About the Project](#about-the-project)
+  * [Built With](#built-with)
+* [Installation](#installation)
+* [Database Structure](#database-structure)
+* [Live Demo and Presentation](#live-demo-and-presentation)
+* [Contributors](#contributors)
+* [Acknowledgements](#acknowledgements)
+* [License](#license)
+
+<!-- ABOUT THE PROJECT -->
+## About The Project
+
+This is the Capstone project that signs the completion of the Javascript module in Microverse Curriculum.
+It is a browser game where users can play an orc and collect stars earning points in a limited period of time.
+After a minute passed round ends and scoreboard displayed on a page.
+
+![screenshot-1](src/assets/titleScreen.PNG)
+
+![screenshot-1](src/assets/screenshot.PNG)
+
+<!-- INSTALLATION -->
+## Installation
+
+To have this app on your pc, you need to:
+* have Ruby & Ruby on Rails installed in your computer
+* [download](https://github.com/vzdrizhni/RPG-game/archive/development.zip) or clone this repo:
+  - Clone with SSH:
   ```
-  "browsers": [
-    ">0.25%",
-    "not ie 11",
-    "not op_mini all"
-  ]
+    git@github.com:vzdrizhni/RPG-game.git
   ```
+  - Clone with HTTPS
+  ```
+    https://github.com/vzdrizhni/RPG-game.git
+  ```
+* and open the terminal inside the repo and run the bundler
+  - ```$ bundler install --without production```
+* then, run rails db:migrate && rails db:seed. This creates the database with the corresponding tables, columns and associations and will populate the database with mockup content
+  - ```$ rails db:migrate```
+* and finally, you can test it in the console by running
+  - ```$ rails server``` and using ```localhost:3000``` into your browser address bar to start using it
 
-### Webpack
-If you want to customize your build, such as adding a new webpack loader or plugin (i.e. for loading CSS or fonts), you can
-modify the `webpack/base.js` file for cross-project changes, or you can modify and/or create
-new configuration files and target them in specific npm tasks inside of `package.json'.
+  ## Rspec testing
 
-## Deploying Code
-After you run the `npm run build` command, your code will be built into a single bundle located at 
-`dist/bundle.min.js` along with any other assets you project depended. 
+* Run the command and see the output:
+```$ bundle exec rspec```
+![Rspec](app/assets/images/rspec.PNG)
 
-If you put the contents of the `dist` folder in a publicly-accessible location (say something like `http://mycoolserver.com`), 
-you should be able to open `http://mycoolserver.com/index.html` and play your game.
+## Database Structure
+ * Database schema used for this project reflects the following structure:
+ ![erd](app/assets/images/erd.png)
+
+### Built With
+This project was built using these technologies.
+* Ruby & Ruby on Rails
+* Rspec / Capybara
+* Bootstrap
+* HTML / CSS / SCSS
+* SQLite
+* Rubocop
+* GithubActions :muscle:
+* Atom
+
+<!-- Live Demo -->
+## Live Demo and Walkthrough Video
+* Live Demo Link: - Heroku Deployment - [RPG-game](https://fathomless-atoll-13027.herokuapp.com/articles) :point_left:
+## WalkThrough Video:
+https://www.loom.com/share/a4b5d729b10a4f88ac7e8365e81e2444
+## Potential future features
+- Add fully working weather API
+- Extend the Authorisation feature
+- Improve the front-end
+
+<!-- CONTACT -->
+## Contributors
+
+👤 **Roman Nikolaev**
+
+- LinkedIn: [Nikolaev Roman](https://www.linkedin.com/in/roman-nikolaev-65b639197/)
+- GitHub: [@vzdrizhni](https://github.com/vzdrizhni)
+- E-mail: vzdrizhni@gmail.com
+
+
+<!-- ACKNOWLEDGEMENTS -->
+## Acknowledgements
+* [Microverse](https://www.microverse.org/)
+* [Ruby Documentation](https://www.ruby-lang.org/en/documentation/)
+* [Ruby on Rails](https://rubyonrails.org/)
+* [Bootstrap](https://getbootstrap.com/)
+* [Behance](https://www.behance.net/)
+* [Heroku](https://www.heroku.com/)
+
+## Credits
+* Nelson Sakwa - [liFEstIye](https://www.behance.net/gallery/14554909/liFEsTlye-Mobile-version)
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[contributors-shield]: https://img.shields.io/github/contributors/vzdrizhni/RPG-game.svg?style=flat-square
+[contributors-url]: https://github.com/vzdrizhni/RPG-game/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/vzdrizhni/RPG-game.svg?style=flat-square
+[forks-url]: https://github.com/vzdrizhni/RPG-game/network/members
+[stars-shield]: https://img.shields.io/github/stars/vzdrizhni/RPG-game.svg?style=flat-square
+[stars-url]: https://github.com/vzdrizhni/RPG-game/stargazers
+[issues-shield]: https://img.shields.io/github/issues/vzdrizhni/RPG-game.svg?style=flat-square
+[issues-url]: https://github.com/vzdrizhni/RPG-game/issues
+
+## 📝 License
+
+This project is [MIT](https://opensource.org/licenses/MIT) licensed.
