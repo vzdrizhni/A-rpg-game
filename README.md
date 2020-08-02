@@ -87,7 +87,7 @@ This project was built using these technologies.
 ## Live Demo and Walkthrough Video
 * Live Demo Link: - [RPG-game](https://vzdrizhni.github.io/A-rpg-game/) :point_left:
 ## WalkThrough Video:
-https://www.loom.com/share/a4b5d729b10a4f88ac7e8365e81e2444
+https://www.loom.com/share/4fd21091cfa044a4814fb94efcdd09c7
 ## Potential future features
 - Extend gameplay functionality.
 - Add Enemies.
