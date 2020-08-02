@@ -26,17 +26,17 @@
     <img src="src/assets/microverse.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">Javascript / Capstone --> [RPG-game]</h3>
+  <h3 align="center">Javascript / Capstone --> [A-rpg-game]</h3>
 
   <p align="center">
     This project is the Capstone of the Microverse curriculum at the end of the Ruby on Rails module!
     <br />
-    <a href="https://github.com/vzdrizhni/RPG-game"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/vzdrizhni/A-rpg-game"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/vzdrizhni/RPG-game/issues">Report Bug</a>
+    <a href="https://github.com/vzdrizhni/A-rpg-game/issues">Report Bug</a>
     ·
-    <a href="https://github.com/vzdrizhni/RPG-game/issues">Request Feature</a>
+    <a href="https://github.com/vzdrizhni/A-rpg-game/issues">Request Feature</a>
   </p>
 </p>
 
