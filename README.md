@@ -111,14 +111,14 @@ https://www.loom.com/share/4fd21091cfa044a4814fb94efcdd09c7
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/vzdrizhni/RPG-game.svg?style=flat-square
-[contributors-url]: https://github.com/vzdrizhni/RPG-game/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/vzdrizhni/RPG-game.svg?style=flat-square
-[forks-url]: https://github.com/vzdrizhni/RPG-game/network/members
-[stars-shield]: https://img.shields.io/github/stars/vzdrizhni/RPG-game.svg?style=flat-square
-[stars-url]: https://github.com/vzdrizhni/RPG-game/stargazers
-[issues-shield]: https://img.shields.io/github/issues/vzdrizhni/RPG-game.svg?style=flat-square
-[issues-url]: https://github.com/vzdrizhni/RPG-game/issues
+[contributors-shield]: https://img.shields.io/github/contributors/vzdrizhni/A-rpg-game.svg?style=flat-square
+[contributors-url]: https://github.com/vzdrizhni/A-rpg-game/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/vzdrizhni/A-rpg-game.svg?style=flat-square
+[forks-url]: https://github.com/vzdrizhni/A-rpg-game/network/members
+[stars-shield]: https://img.shields.io/github/stars/vzdrizhni/A-rpg-game.svg?style=flat-square
+[stars-url]: https://github.com/vzdrizhni/A-rpg-game/stargazers
+[issues-shield]: https://img.shields.io/github/issues/vzdrizhni/A-rpg-game.svg?style=flat-square
+[issues-url]: https://github.com/vzdrizhni/A-rpg-game/issues
 
 ## 📝 License
 
