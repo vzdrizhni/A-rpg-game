@@ -71,6 +71,10 @@ A character can be controled wit arrow keys(UP, DOWN, LEFT, RIGHT). Try to colle
 ### Design Process
 
 Initially a game was designed as a turned-based RPG about fantasy creatures battles. But because of the severe reality the game is what it is now.
+At the end of the day 2 I have learned basics of Phaser. I have created scenes, added objects to the scenes, added collisions and assets to the scenes. The rest of the days have been organized as following:
+* Implemented the logic of the game.
+* Implemented the API service scoring system.
+* Implemented tests for Scenes and API.
 <!-- INSTALLATION -->
 #
 
