@@ -29,7 +29,7 @@
   <h3 align="center">Javascript / Capstone --> [A-rpg-game]</h3>
 
   <p align="center">
-    This project is the Capstone of the Microverse curriculum at the end of the Ruby on Rails module!
+    This project is the Capstone of the Microverse curriculum at the end of the Javascript module!
     <br />
     <a href="https://github.com/vzdrizhni/A-rpg-game"><strong>Explore the docs »</strong></a>
     <br />
